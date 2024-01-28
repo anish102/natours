@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 //1st middlewares
 app.use(morgan("dev"));
+app.use(express.static(`${__dirname}/public`));
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
